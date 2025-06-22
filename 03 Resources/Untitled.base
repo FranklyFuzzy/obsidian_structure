@@ -1,0 +1,27 @@
+filters:
+  and:
+    - file.path.contains("03 Resources")
+    - "!title.isEmpty()"
+views:
+  - type: table
+    name: Table
+    order:
+      - title
+      - category
+      - type
+      - tags
+      - last_modified
+      - file.name
+    sort:
+      - column: note.last_modified
+        direction: ASC
+      - column: note.title
+        direction: ASC
+      - column: note.area_name
+        direction: ASC
+  - type: table
+    name: Recent Items
+    order:
+      - file.name
+  - type: table
+    name: Other view
